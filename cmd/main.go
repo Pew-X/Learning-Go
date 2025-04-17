@@ -2,15 +2,16 @@ package main
 
 import (
 	"fmt"
+	"hello"
 	"os"
 )
 
 func main() {
 
 	if len(os.Args) > 1 {
-		fmt.Println("Hello World", os.Args[1])
+		fmt.Println(hello.Say(os.Args[1]))
 	} else {
-		fmt.Println("Hello , World! Simple ")
+		fmt.Println(hello.Say("World"))
 	}
 
 }
