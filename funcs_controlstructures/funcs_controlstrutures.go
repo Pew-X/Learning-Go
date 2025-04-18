@@ -1,6 +1,7 @@
 package funcscontrolstructures
 
 import (
+	"errors"
 	"fmt"
 )
 
@@ -18,8 +19,13 @@ func IntDiv(n int, d int) int {
 
 }
 
-func IntDiv_mulReturns(n int, d int) (int, int) {
+func IntDiv_mulReturns(n int, d int) (int, int, error) {
+	var err error
+	if d == 0 {
+		err = errors.New("cannot divide by zero")
+		return 0, 0, err
+	}
 	a := n / d
-	return a, n % d
+	return a, n % d, err
 
 }
