@@ -30,4 +30,8 @@ func main() {
 	fmt.Println(addr)
 	fmt.Println(&slice[1])
 
+	new_slice := append(slice, 4)
+	fmt.Println(new_slice[1])
+	fmt.Println(addr)
+
 }
