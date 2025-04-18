@@ -43,4 +43,38 @@ func main() {
 	myMap["year"] = 02
 	fmt.Println(len(myMap))
 
+	for context, val := range myMap {
+		fmt.Println(context)
+		fmt.Println(val)
+	}
+
+	for i, v := range arr {
+		fmt.Println(i)
+		fmt.Println("->")
+		fmt.Println(v)
+	}
+
+	for i, v := range slice {
+		fmt.Println(i)
+		fmt.Println("->")
+		fmt.Println(v)
+	}
+
+	//While Loop in go
+
+	for {
+		fmt.Print("Hello")
+		break // Remove for inf loop or use conditionally
+	}
+
+	//Normal For Loop
+	for i := 0; i < 7; i++ {
+		fmt.Println(slice[i])
+	}
+
+	/// ALT for loop using range keyword
+	for i := range 7 {
+		fmt.Println(slice[i])
+	}
+
 }
