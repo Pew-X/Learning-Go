@@ -12,3 +12,9 @@ func Slice(seed int32) ([]int32, int32) {
 	arr := make([]int32, seed)
 	return arr, seed
 }
+
+func Map() map[string]int32 {
+	var myMap = map[string]int32{}
+	return myMap
+
+}

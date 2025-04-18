@@ -15,7 +15,7 @@ func main() {
 
 	addr := &arr[0]
 
-	//Slices
+	//Slices -------------------------------------
 
 	slice, seed := loops_arrays_slices_maps.Slice(7)
 	slice[0] = seed
@@ -33,5 +33,14 @@ func main() {
 	new_slice := append(slice, 4)
 	fmt.Println(new_slice[1])
 	fmt.Println(addr)
+
+	//Maps {k : v} ---------------------------------------------------------
+
+	var myMap map[string]int32 = loops_arrays_slices_maps.Map()
+	// Or if you donno data type use :=
+
+	myMap["piyush"] = 22
+	myMap["year"] = 02
+	fmt.Println(len(myMap))
 
 }
