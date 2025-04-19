@@ -22,4 +22,12 @@ func main() {
 	fmt.Print(ans)
 	fmt.Print(rem)
 
+	// pre decleration of variables — anothe way fo writing if statements
+	if answer, remainder, err := funcscontrolstructures.IntDiv_mulReturns(420, 0); err != nil {
+		fmt.Printf("%s", err.Error())
+	} else {
+		fmt.Print(answer)
+		fmt.Print(remainder)
+	}
+
 }
