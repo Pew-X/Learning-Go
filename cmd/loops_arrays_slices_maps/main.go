@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 
 	"github.com/Pew-X/learning-go/loops_arrays_slices_maps"
 )
@@ -76,5 +77,15 @@ func main() {
 	for i := range 7 {
 		fmt.Println(slice[i])
 	}
+
+	// Number of unique words in .txt file
+	file, err := os.Open("cmd/loops_arrays_slices_maps/tokens.txt")
+	if err != nil {
+		fmt.Println("Error opening file:", err)
+		return
+	}
+	defer file.Close()
+
+	fmt.Println(loops_arrays_slices_maps.UniqueWords(file))
 
 }
