@@ -34,4 +34,5 @@ func main() {
 
 	defer funcscontrolstructures.A()
 	defer funcscontrolstructures.B()
+
 }
