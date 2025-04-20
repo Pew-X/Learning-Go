@@ -12,22 +12,26 @@ func main() {
 	s := "Hello"
 	funcscontrolstructures.Printmeparam(s)
 
-	ans := funcscontrolstructures.IntDiv(420, 0)
+	ans := funcscontrolstructures.IntDiv(420, 69)
 	fmt.Print(ans)
 
 	ans, rem, err := funcscontrolstructures.IntDiv_mulReturns(420, 69)
 	if err != nil {
 		fmt.Printf("%s", err.Error())
 	}
-	fmt.Print(ans)
-	fmt.Print(rem)
+	fmt.Println(ans)
+	fmt.Println(rem)
 
 	// pre decleration of variables — anothe way fo writing if statements
-	if answer, remainder, err := funcscontrolstructures.IntDiv_mulReturns(420, 0); err != nil {
-		fmt.Printf("%s", err.Error())
+	if answer, remainder, err := funcscontrolstructures.IntDiv_mulReturns(420, 69); err != nil {
+		fmt.Print("bro wtf")
 	} else {
-		fmt.Print(answer)
-		fmt.Print(remainder)
+		fmt.Println(answer)
+		fmt.Println(remainder)
 	}
 
+	//Defer implementation
+
+	defer funcscontrolstructures.A()
+	defer funcscontrolstructures.B()
 }
