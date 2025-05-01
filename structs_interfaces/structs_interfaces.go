@@ -2,6 +2,7 @@ package structs_interfaces
 
 import (
 	"fmt"
+	"math"
 	"time"
 )
 
@@ -51,4 +52,27 @@ func (p Point) DistanceFromOrg() float64 {
 func (p *Point) DistanceFromOrgPtr() float64 {
 	fmt.Print(&p)
 	return p.X*p.X + p.Y*p.Y
+}
+
+type Line struct {
+	Begin, End Point
+}
+
+func (l Line) Distance() float64 {
+	return math.Hypot(l.End.X-l.Begin.X, l.End.Y-l.Begin.Y)
+}
+
+// let us create a type path that can have points
+
+type Path []Point
+
+func (p Path) Distance() (sum float64) {
+
+	for i := 1; i < len(p); i++ {
+
+		sum += Line{p[i-1], p[i]}.Distance() // we are just creating a line on the fly on two points and just storing distance away
+
+	}
+
+	return sum
 }
