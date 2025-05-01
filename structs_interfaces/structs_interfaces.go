@@ -1,6 +1,9 @@
 package structs_interfaces
 
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
 type Car struct {
 	Name     string
@@ -30,4 +33,22 @@ type Response struct {
 func (c Car) MilesLeft(milesdone int) int {
 	return c.Capacity - milesdone
 
+}
+
+type Point struct {
+	X float64
+	Y float64
+}
+
+//method with pointer reciever
+
+func (p Point) DistanceFromOrg() float64 {
+	fmt.Print(&p)
+
+	return p.X*p.X + p.Y*p.Y
+}
+
+func (p *Point) DistanceFromOrgPtr() float64 {
+	fmt.Print(&p)
+	return p.X*p.X + p.Y*p.Y
 }

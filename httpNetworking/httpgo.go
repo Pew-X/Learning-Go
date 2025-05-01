@@ -1,12 +1,19 @@
 package httpnetworking
 
 import (
+	"encoding/json"
 	"fmt"
 	"io"
 	"log"
 	"net/http"
 	"os"
 )
+
+type todo struct {
+	ID        int    `json:"id"`
+	Title     string `json:"title"`
+	Completed bool   `json::"completed"`
+}
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Welcome to my Server")
@@ -40,6 +47,17 @@ func SimpleClient() {
 		}
 
 		fmt.Println(string(body))
+
+		var item todo
+
+		err = json.Unmarshal(body, &item)
+
+		if err != nil {
+			fmt.Fprintln(os.Stderr, err)
+			os.Exit(-1)
+		}
+
+		fmt.Printf("%#v\n", item)
 
 	}
 }

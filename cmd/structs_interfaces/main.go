@@ -31,4 +31,14 @@ func main() {
 	json.Unmarshal(j, &r2)
 	fmt.Println(r2)
 
+	// pointer in method recievers
+
+	p := structs_interfaces.Point{X: 15, Y: 22}
+
+	fmt.Print(&p)
+
+	p.DistanceFromOrg()
+
+	p.DistanceFromOrgPtr()
+
 }
