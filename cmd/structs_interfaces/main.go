@@ -52,4 +52,8 @@ func main() {
 
 	fmt.Println(Perimeter.Distance())
 
+	// With interface  Distancer
+	structs_interfaces.PrintDistance(side)
+	structs_interfaces.PrintDistance(Perimeter)
+
 }

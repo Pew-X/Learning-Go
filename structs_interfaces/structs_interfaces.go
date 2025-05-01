@@ -76,3 +76,11 @@ func (p Path) Distance() (sum float64) {
 
 	return sum
 }
+
+type Distancer interface {
+	Distance() float64
+}
+
+func PrintDistance(d Distancer) {
+	fmt.Println(d.Distance())
+}
